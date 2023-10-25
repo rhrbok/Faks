@@ -1,0 +1,3 @@
+﻿  Source.c
+C:\A_FAKULTET\Strukture\fakultet\Faks\Vjezba2\Vjezba2\Source.c(158,38): warning C4047: 'return': 'position' differs in levels of indirection from 'int'
+  Vjezba2.vcxproj -> C:\A_FAKULTET\Strukture\fakultet\Faks\Vjezba2\x64\Debug\Vjezba2.exe
