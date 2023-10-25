@@ -31,7 +31,7 @@ typedef struct _Student
 }Student;
 
 
-
+int readNoRowsInFile();
 int countStudentsFromFile(char*);
 int getStudentInfo(char*, int, Student*);
 void printStudentInfo(int, Student*);
@@ -39,6 +39,29 @@ void printStudentInfo(int, Student*);
 
 int main(void)
 {
+
+    int i, noRows = 0;
+    noRows = readNoRowsInFile();
+
+    if (noRows > 0) {
+
+        FILE* filePointer;
+        filePointer = fopen("students.txt", "r");
+
+        Student* stud;
+        stud = (Student*)malloc(noRows * sizeof(Student));
+
+        for (i = 0; i < noRows; i++) {
+            fscanf(filePointer, " %s %s %lf ", stud[i].name, stud[i].surname, &stud[i].points);
+        }
+
+        for (i = 0; i < noRows; i++) {
+            printf("%s %s %.2lf %.2lf\%\n", stud[i].name, stud[i].surname, stud[i].points, stud[i].points / MAX_POINTS * 100);
+        }
+
+        fclose(filePointer);
+    }
+
     Student* studenti = NULL;
     int i = 0;
     int show = -1;
@@ -85,6 +108,27 @@ int main(void)
     free(studenti);
 
     return SUCCESS;
+}
+
+int readNoRowsInFile() {
+    int counter = 0;
+    FILE* filePointer;
+    char buffer[MAX_LINE] = { 0 };
+
+    filePointer = fopen("students.txt", "r");
+    if (!filePointer) {
+        printf("File is not open!\n");
+        return FILE_ERROR_OPEN;
+    }
+
+    while (!feof(filePointer)) {
+        fgets(buffer, MAX_LINE, filePointer);
+        counter++;
+    }
+
+    fclose(filePointer);
+
+    return counter;
 }
 
 
