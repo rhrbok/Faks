@@ -1,0 +1,6 @@
+﻿  FileName.c
+C:\A_FAKULTET\Strukture\Vjezba 11\Vjezba 11\FileName.c(198,3): warning C4047: 'return': 'CountryPosition' differs in levels of indirection from 'int'
+C:\A_FAKULTET\Strukture\Vjezba 11\Vjezba 11\FileName.c(121): warning C4716: 'printAllCountriesFromHash': must return a value
+C:\A_FAKULTET\Strukture\Vjezba 11\Vjezba 11\FileName.c(369): warning C4716: 'printCountryList': must return a value
+C:\A_FAKULTET\Strukture\Vjezba 11\Vjezba 11\FileName.c(387): warning C4716: 'printTownList': must return a value
+  Vjezba 11.vcxproj -> C:\A_FAKULTET\Strukture\Vjezba 11\x64\Debug\Vjezba 11.exe
